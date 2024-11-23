@@ -1,5 +1,13 @@
 import pandas as pd
-from trained_model import final_model, normalizer, columns_to_normalize
+import pickle
+
+# Data load
+with open('model.pkl', 'rb') as file:
+    final_model = pickle.load(file)
+with open('normalizer.pkl', 'rb') as file:
+    normalizer = pickle.load(file)
+with open('columns_to_normalize.pkl', 'rb') as file:
+    columns_to_normalize = pickle.load(file)
 
 def predict(input_data):
     """
@@ -12,10 +20,10 @@ def predict(input_data):
     Probability of heart disease
     The top contributing factors.
     """
-    # Convert input data to a DataFrame
+  
     input_df = pd.DataFrame([input_data])
     
-    # Normalize the required columns
+ 
     input_norm = input_df.copy()
     input_norm[columns_to_normalize] = normalizer.transform(input_df[columns_to_normalize])
     
