@@ -2,6 +2,7 @@ streamlit
 Pandas==1.5.3
 NumPy==1.26.4      
 Scikit-learn==1.5.2
+Imbalanced-learn==0.12.4
 altair
 sklearn.model_selection
 sklearn.preprocessing
