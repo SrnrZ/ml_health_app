@@ -9,3 +9,6 @@ sklearn.ensemble
 imblearn.under_sampling
 sklearn.metrics
 pickle
+columns_to_normalize.pkl
+model.pkl
+normalizer.pkl
