@@ -2,7 +2,7 @@ import pandas as pd
 import pickle
 
 # Data load
-with open('models/model.pkl', 'rb') as file:
+with open('model.pkl', 'rb') as file:
     final_model = pickle.load(file)
 with open('normalizer.pkl', 'rb') as file:
     normalizer = pickle.load(file)
