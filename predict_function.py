@@ -2,12 +2,22 @@ import pandas as pd
 import os
 import pickle
 
-# Data load
-with open('model.pkl', 'rb') as file:
+# Get the base directory where the script is running
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Define paths for the model files
+MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
+NORMALIZER_PATH = os.path.join(BASE_DIR, "normalizer.pkl")
+COLUMNS_PATH = os.path.join(BASE_DIR, "columns_to_normalize.pkl")
+
+# Load the files
+with open(MODEL_PATH, 'rb') as file:
     final_model = pickle.load(file)
-with open('normalizer.pkl', 'rb') as file:
+
+with open(NORMALIZER_PATH, 'rb') as file:
     normalizer = pickle.load(file)
-with open('columns_to_normalize.pkl', 'rb') as file:
+
+with open(COLUMNS_PATH, 'rb') as file:
     columns_to_normalize = pickle.load(file)
 
 def predict(input_data):
