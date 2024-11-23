@@ -4,7 +4,7 @@ import os
 
 # Data load
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, 'models', 'model.pkl')
+MODEL_PATH = os.path.join(BASE_DIR, "models", "model.pkl")
 
 with open(MODEL_PATH, 'rb') as file:
     final_model = pickle.load(file)
