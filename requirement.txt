@@ -1,14 +1,6 @@
-streamlit
-Pandas==1.5.3
-NumPy==1.26.4      
-Scikit-learn==1.5.2
-altair
-sklearn.model_selection
-sklearn.preprocessing
-sklearn.ensemble
-imblearn.under_sampling
-sklearn.metrics
-pickle
+app.py
+predict_function.py
+trained_model.py
 columns_to_normalize.pkl
 model.pkl
 normalizer.pkl
