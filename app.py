@@ -3,9 +3,6 @@ import pandas as pd
 import altair as alt
 from predict_function import predict
 
-import os
-st.write("Current working directory:", os.getcwd())
-
 # Apply light blue background using custom CSS
 st.markdown(
     """
