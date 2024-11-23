@@ -3,10 +3,7 @@ import pickle
 import os
 
 # Data load
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "models", "model.pkl")
-
-with open(MODEL_PATH, 'rb') as file:
+with open('model.pkl', 'rb') as file:
     final_model = pickle.load(file)
 with open('normalizer.pkl', 'rb') as file:
     normalizer = pickle.load(file)
