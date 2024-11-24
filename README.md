@@ -91,15 +91,13 @@ The recall score for having no heart disease is at 0.72 and for having heart dis
 As a result, the model is more sensitive to risk factors for heart diseases as they become more significant (e.g. very high blood pressure or high cholesterin) and/or accumulate with more risk factors (e.g. low general and mental health). This outcome is assumed to be suitable, given the aim of the application to sensitize the user to the risks of having a heart disease.
 Future work could explore more fine tuning techniques, such as dropping atomic links as well asconsulting domain experts for better insight into feature relevance and data interpretation. In this regard, result interpretation and reccomendations could be further automated via a chat-bot based on LLMs.
 
-**Repository Contents**
+**Local Deployment**
 
-•	data/: heart_disease_health_indicators_BRFSS2015.csv
+•	Download files into one folder
 
-•	.py files: trained_model.py; predict_function.py; app.py
+•	Install and import libraries as listed in requirements.txt file
 
-•	Pickle files: model.pkl; normalizer.pkl; column_to_normalize.pkl
-
-•	presentation/: Slide deck summarizing the project findings and key insights.
+•	Run app.py file via terminal command from project folder: streamlit run app.py
 
 **References**
 
