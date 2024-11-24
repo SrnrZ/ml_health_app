@@ -97,7 +97,7 @@ Future work could explore more fine tuning techniques, such as dropping atomic l
 
 •	Install and import libraries as listed in requirements.txt file
 
-•	Run app.py file via terminal command from project folder: streamlit run app.py
+•	Run app.py file from project folder via terminal command: "streamlit run app.py"
 
 **References**
 
