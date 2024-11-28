@@ -138,13 +138,13 @@ with st.form("health_form"):
         index=example_input['HighChol']
     )
     CholCheck = st.selectbox(
-        'Did you have a cholesterol check within the past five years', 
+        'Did you have a cholesterol check within the past five years?', 
         options=list(binary_display.keys()), 
         format_func=lambda x: binary_display[x], 
         index=example_input['CholCheck']
     )
     BMIndex = st.number_input(
-        'What is your Body Mass Index (BMI)', 
+        'What is your Body Mass Index (BMI)?', 
         min_value=10, max_value=30, 
         value=int(example_input['BMI'])
     )
