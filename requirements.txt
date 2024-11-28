@@ -1,10 +1,5 @@
+altair
+scikit-learn==1.5.2
+imbalanced-learn
 pandas==1.5.3
 numpy==1.26.4
-scikit-learn==1.5.2
-Imbalanced-learn
-altair
-sklearn.model_selection
-sklearn.preprocessing
-sklearn.ensemble
-imblearn.under_sampling
-sklearn.metrics
