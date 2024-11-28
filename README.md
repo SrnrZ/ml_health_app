@@ -1,5 +1,5 @@
 # Heart Disease Prediction Using Machine Learning
-### (Local Deployment of Health Screening App via Streamlit)
+### (Deployed via Streamlit: https://trainedmlmodelheart-jnphtxqepqguxpgblgwibss.streamlit.app/)
 
 **Project Overview**
 
