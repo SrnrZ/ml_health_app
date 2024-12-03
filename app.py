@@ -360,11 +360,7 @@ if submitted:
     )
     st.altair_chart(chart)
 
-    # Modify text color for readability
-    st.markdown(f"<p style='color: #333333;'>The risk for a heart disease is currently <strong>'{example_output['prediction']}'</strong></p>", unsafe_allow_html=True)
-    st.markdown(f"<p style='color: #333333;'>Heart Disease Risk in Percentage: <strong>{heart_disease_risk:.2f}%</strong></p>", unsafe_allow_html=True)
-
-        # Ensuring 'top_factors' DataFrame exists and extract the top 5
+    # Ensuring 'top_factors' DataFrame exists and extract the top 5
     if 'top_factors' in example_output:
         top_factors_df = pd.DataFrame(example_output['top_factors']).head(5)
         top_factors = top_factors_df['feature'].tolist()  
