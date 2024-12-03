@@ -355,6 +355,28 @@ if submitted:
     else:
         top_factors = []  
 
+    # Modified Altair chart with transparent background
+    chart = alt.Chart(top_factors_df).mark_bar().encode(
+        x=alt.X('contribution:Q', title="Contribution to Risk", 
+                axis=alt.AxisConfig(labelColor='black', titleColor='black')),
+        y=alt.Y('feature:N', sort='-x', title="Feature", 
+                axis=alt.AxisConfig(labelColor='black', titleColor='black')),
+        color=alt.Color('feature:N', legend=None, 
+                        scale=alt.Scale(scheme='category10'))
+    ).properties(
+        width=600,
+        height=400,
+        background='transparent'  # Transparent chart background
+    ).configure_view(
+        strokeWidth=0  # Remove chart border
+    )
+    st.altair_chart(chart)
+
+    # Modify text color for readability
+    st.markdown(f"<p style='color: #333333;'>The risk for a heart disease is currently <strong>'{example_output['prediction']}'</strong></p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='color: #333333;'>Heart Disease Risk in Percentage: <strong>{heart_disease_risk:.2f}%</strong></p>", unsafe_allow_html=True)
+
+    
     # Advice dictionary
     advice = {
         'HighBP': "Maintain a healthy weight, reduce sodium intake, engage in regular exercise, and manage stress to lower blood pressure.",
