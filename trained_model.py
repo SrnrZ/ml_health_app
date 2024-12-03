@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 from imblearn.under_sampling import RandomUnderSampler
 from sklearn.metrics import classification_report, confusion_matrix
 
-data = pd.read_csv('C:/Users/Srnzzz/Documents/5- Ironhack/ML/heart_disease_health_indicators_BRFSS2015.csv', delimiter=';')
+data = pd.read_csv('xxx/heart_disease_health_indicators_BRFSS2015.csv', delimiter=';')
 
 # 'HeartDiseaseorAttack' as target variable (y)
 features = data.drop('HeartDiseaseorAttack', axis=1)
