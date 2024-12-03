@@ -338,23 +338,7 @@ if submitted:
 
     # Chart for the top 5 factors displayed
     st.write("### Top 5 Contributing Factors")
-    chart = alt.Chart(top_factors_df).mark_bar().encode(
-        x=alt.X('contribution:Q', title="Contribution to Risk"),
-        y=alt.Y('feature:N', sort='-x', title="Feature"),
-        color=alt.Color('feature:N', legend=None)
-    ).properties(
-        width=600,
-        height=400
-    )
-    st.altair_chart(chart)
-        
-    # Ensuring 'top_factors' DataFrame exists and extract the top 5
-    if 'top_factors' in example_output:
-        top_factors_df = pd.DataFrame(example_output['top_factors']).head(5)
-        top_factors = top_factors_df['feature'].tolist()  
-    else:
-        top_factors = []  
-
+    
     # Modified Altair chart with transparent background
     chart = alt.Chart(top_factors_df).mark_bar().encode(
         x=alt.X('contribution:Q', title="Contribution to Risk", 
@@ -376,7 +360,13 @@ if submitted:
     st.markdown(f"<p style='color: #333333;'>The risk for a heart disease is currently <strong>'{example_output['prediction']}'</strong></p>", unsafe_allow_html=True)
     st.markdown(f"<p style='color: #333333;'>Heart Disease Risk in Percentage: <strong>{heart_disease_risk:.2f}%</strong></p>", unsafe_allow_html=True)
 
-    
+        # Ensuring 'top_factors' DataFrame exists and extract the top 5
+    if 'top_factors' in example_output:
+        top_factors_df = pd.DataFrame(example_output['top_factors']).head(5)
+        top_factors = top_factors_df['feature'].tolist()  
+    else:
+        top_factors = []  
+
     # Advice dictionary
     advice = {
         'HighBP': "Maintain a healthy weight, reduce sodium intake, engage in regular exercise, and manage stress to lower blood pressure.",
