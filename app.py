@@ -12,7 +12,7 @@ from predict_function import predict
 st.markdown("""
 <style>
 .stApp {
-    background-color: #D5C1E4;  /* Light gray main page */
+    background-color: #E3D8E8;  /* Light gray main page */
     color: black;
 }
 .stSidebar {
