@@ -289,8 +289,8 @@ with st.form("health_form"):
         index=example_input['Income'] - 1
     )
 
-    # Confirm button
-    submitted = st.form_submit_button("Confirm")
+    # Submit button
+    submitted = st.form_submit_button("Submit")
 
 
 # Confirm button, if clicked, example_input is updated and prediction is displayed
