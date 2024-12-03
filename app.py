@@ -340,7 +340,7 @@ if submitted:
     st.write("### Top 5 Contributing Factors")
     
     # Modified Altair chart with transparent background
-   chart = alt.Chart(top_factors_df).mark_bar().encode(
+    chart = alt.Chart(top_factors_df).mark_bar().encode(
         x=alt.X('contribution:Q', title="Contribution to Risk", 
                 axis=alt.AxisConfig(labelColor='black', titleColor='black')),
         y=alt.Y('feature:N', sort='-x', title="Feature", 
