@@ -3,42 +3,49 @@ import pandas as pd
 import altair as alt
 from predict_function import predict
 
-# Custom CSS for navy blue theme
+import streamlit as st 
+import pandas as pd
+import altair as alt
+from predict_function import predict
+
+# Custom CSS for color theme
 st.markdown("""
 <style>
 .stApp {
-    background-color: #000080;  /* Navy Blue */
-    color: white;
+    background-color: #D6D6D6;  /* Light gray main page */
+    color: black;
 }
 .stSidebar {
-    background-color: #00004F;  /* Darker navy for sidebar */
-    color: #E6E6FA;  /* Lavender text for better readability */
+    background-color: #836E85;  /* Lavender sidebar */
+    color: white;
 }
 .stSelectbox, .stNumberInput, .stForm {
-    color: white;
+    color: black;
 }
 .stFormSubmitButton>button {
     background-color: #4CAF50;
     color: white;
 }
 .stMarkdown {
-    color: white;
+    color: black;
 }
 .stHeader {
-    color: #E0E0E0;
+    color: #333333;
 }
 /* Sidebar specific styling */
 .css-1aumxhk {
-    background-color: #00004F;
+    background-color: #836E85;
 }
 .css-1v3fvcr {
-    color: #E6E6FA;
+    color: white;
 }
 .sidebar .sidebar-content {
-    background-color: #00004F;
+    background-color: #836E85;
 }
 </style>
 """, unsafe_allow_html=True)
+
+
 # Frame
 st.title("Health Screening")
 st.subheader("for Coronary Heart Disease or Myocardial Infarction")
