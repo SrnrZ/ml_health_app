@@ -3,6 +3,29 @@ import pandas as pd
 import altair as alt
 from predict_function import predict
 
+# Custom CSS for dark theme
+st.markdown("""
+<style>
+.stApp {
+    background-color: black;
+    color: white;
+}
+.stSelectbox, .stNumberInput, .stForm {
+    color: white;
+}
+.stFormSubmitButton>button {
+    background-color: #4CAF50;
+    color: white;
+}
+.stMarkdown {
+    color: white;
+}
+.stHeader {
+    color: #E0E0E0;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Frame
 st.title("Health Screening")
 st.subheader("for Coronary Heart Disease or Myocardial Infarction")
