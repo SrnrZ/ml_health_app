@@ -345,7 +345,7 @@ if submitted:
                 axis=alt.AxisConfig(labelColor='black', titleColor='black')),
         y=alt.Y('feature:N', sort='-x', title="Feature", 
                 axis=alt.AxisConfig(labelColor='black', titleColor='black')),
-        color=alt.Color('feature:N', 
+        color=alt.Color('feature:N', legend=None,
                         scale=alt.Scale(
                             domain=top_factors_df['feature'].tolist(),
                             range=['#FF0000', '#FF3333', '#FF6666', '#FF9999', '#FFCCCC']
