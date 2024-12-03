@@ -23,7 +23,7 @@ Behavioral Risk Factor Surveillance System (BRFSS) 2015 survey data.
 """)
 st.sidebar.subheader("Model Evaluation")
 st.sidebar.write("""
-The model is more sensitive towards risk factors for heart diseases as they become more 
+The model has been tuned to be more sensitive towards risk factors for heart diseases as they become more 
 significant (e.g. very high blood pressure or high cholesterol) and/or with the accumulation 
 of risk factors (e.g. low general or mental health and more). 
 
@@ -122,6 +122,7 @@ default_gen_health_label = gen_health_labels[example_input['GenHlth'] - 1]
 # Mapping for display purposes
 binary_display = {0: "No", 1: "Yes"}
 diabetes_display = {0: "No", 1: "Diabetes Type 1", 2: "Diabetes Type 2"}
+gender_displaye = {0: "Female", 1: "Male"}
 
 # Input fields
 with st.form("health_form"):
@@ -224,9 +225,9 @@ with st.form("health_form"):
         index=example_input['DiffWalk']
     )
     Sex = st.selectbox(
-        'Sex (0=Female, 1=Male)', 
-        options=list(binary_display.keys()), 
-        format_func=lambda x: binary_display[x], 
+        'Sex', 
+        options=list(gender_displaye.keys()), 
+        format_func=lambda x: gender_displaye[x], 
         index=example_input['Sex']
     )
     Age = st.selectbox(
