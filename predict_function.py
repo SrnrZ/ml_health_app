@@ -38,7 +38,7 @@ def predict(input_data):
     }).sort_values('contribution', ascending=False)
     
     return {
-        'prediction': 'High Risk' if prediction == 1 else 'Low Risk',
+        'prediction': '(High Risk)' if prediction == 1 else '(Low Risk)',
         'probability': probability,
         'top_factors': feature_contributions.head(10)
     }
