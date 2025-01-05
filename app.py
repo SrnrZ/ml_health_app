@@ -3,11 +3,6 @@ import pandas as pd
 import altair as alt
 from predict_function import predict
 
-import streamlit as st 
-import pandas as pd
-import altair as alt
-from predict_function import predict
-
 # Custom CSS for color theme
 st.markdown("""
 <style>
@@ -323,12 +318,15 @@ if submitted:
     # Predict function call with updated example_input
     example_output = predict(example_input)
 
-    # Prediction displayed
-    st.write(f"The risk for a heart disease is currently **'{example_output['prediction']}'**")
 
-    # Probability as a percentage displayed
+    # Probability as a percentage and Prediction displayed
     heart_disease_risk = example_output["probability"] * 100
-    st.write(f"Heart Disease Risk in Percentage: **{heart_disease_risk:.2f}%**")
+    st.markdown(
+        f'<div style="background-color: #836E85; padding: 10px; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);">'
+        f'<strong style="color: black;"> Heart Disease Risk in Percentage: {heart_disease_risk:.2f}% {example_output["prediction"]}</strong>'
+        f'</div>',
+        unsafe_allow_html=True
+    )
 
     # Handle the top_factors data
     top_factors_df = example_output["top_factors"]
@@ -394,6 +392,13 @@ if submitted:
 
     # Advice for only top 5 factors displayed
     st.write("### Personalized Health Advice for Top Risk Factors")
+    advice_text = ""
     for factor in top_factors:
         if factor in advice:
-            st.write(f"**{factor}:** {advice[factor]}")
+            advice_text += f"<strong>{factor}:</strong> {advice[factor]}<br><br>"  # Using HTML for bold text
+    
+    # Display advice in a styled white text field with a fixed height for scrolling
+    st.markdown(
+        f'<div style="background-color: white; padding: 10px; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); height: 150px; overflow-y: auto;">{advice_text}</div>',
+        unsafe_allow_html=True
+    )
